@@ -1,16 +1,16 @@
 import pandas as pd
 import os
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def fetch_deals_board():
-    print(" TOOL CALL: Fetching DEALS board from monday (live)")
-    path = os.path.join(DATA_PATH, "Deal_funnel_Data.xlsx")
+    print("TOOL CALL: Fetching DEALS board (live)")
+    path = os.path.join(BASE_DIR, "data", "deals.xlsx")
     df = pd.read_excel(path)
     return df
 
 def fetch_workorders_board():
-    print(" TOOL CALL: Fetching WORK ORDERS board from monday (live)")
-    path = os.path.join(DATA_PATH, "Work_Order_Tracker Data.xlsx")
+    print("TOOL CALL: Fetching WORK ORDERS board (live)")
+    path = os.path.join(BASE_DIR, "data", "work_orders.xlsx")
     df = pd.read_excel(path)
     return df
